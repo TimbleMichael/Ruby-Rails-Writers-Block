@@ -1,0 +1,14 @@
+<div class="card my-5">
+    <div class="card-body">
+        <h1>Edit Question</h1>
+
+        <%= render 'form', question: @question %>
+
+        <div class="mt-3"
+            <%= link_to 'Show', @question, class: 'btn btn-info mr-2' %>
+            <%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mr-2' %>
+            <%= link_to 'Back', questions_path, class: 'btn btn-dark' %>
+        </div>
+    </div>
+</div>
+

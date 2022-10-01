@@ -1,0 +1,27 @@
+<center><h1>Welcome to Writers Block</h1><center>
+
+<br>
+
+<center><h5>This is Writers Block, a place for writers to ask questions regarding</h5><center>
+<center><h5>screenplays, short storys, essays, novels, and anything that is creative.</h5><center>
+
+<br>
+
+<h6>Please make an account before asking quesitons:</h6> <%= link_to 'Signup', signup_path, class: 'btn btn-primary' %>
+
+<br>
+<br>
+<br>
+
+<h6>If you already have an account please login in here:</h6> <%= link_to 'Login', login_path, class: 'btn btn-primary' %>
+
+<br>
+<br>
+<br>
+
+
+<%= form_tag('/auth/github', method: 'post') do %>
+    <button type='submit'>Login with GitHub</button>
+<% end %>
+
+

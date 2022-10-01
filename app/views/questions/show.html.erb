@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <p id="notice"><%= notice %></p>
+
+    <h1 class="text-center"><%= @question.title %></h1>
+  
+    <hr >
+    <div class="my-4">
+      <%= simple_format(@question.body) %>
+    </div>
+
+    <%= link_to 'Back', questions_path, class: 'btn btn-dark' %>
+
+  </div>
+</div>
+
+<div class="card my-1">
+  <div class="card-body">
+    <p class="font-weight-bold"><strong>Comments</strong></p>
+    <%= form_with(model: [@question, @question.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.label 'New comment' %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary mt-2' %>
+    <% end %>
+  </div>
+</div>
+
+<%= render @question.comments %>
