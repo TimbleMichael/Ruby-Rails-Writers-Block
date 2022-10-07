@@ -22,7 +22,11 @@ class QuestionsController < ApplicationController
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
-    @question.user = User.first
+    puts session[:user_id]
+    puts "FJDLKJFLKDJFLKD"
+    @question.user = User.find(session[:user_id])
+    
+
 
     respond_to do |format|
       if @question.save
