@@ -23,8 +23,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     puts session[:user_id]
-    puts "FJDLKJFLKDJFLKD"
-    @question.user = User.find(session[:user_id])
+    @question.user = User.find_by(session[:user_id])
     
 
 
